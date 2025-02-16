@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.header-title {
+    width: max-content;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    font-family: Impact;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.header-image {
+    flex: 0 0 auto; 
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-p {
+    width: 700px;
+    color: rgb(255, 255, 255);
+    font-family: "Inter";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    width: 100%;
+    height: auto; /* Измените это значение на auto */
+    padding-top: 50px; /* Уменьшите отступ сверху */
+    margin: 20px auto;
+}
+
+.content {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Отступы между блоками */
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 0; /* Уберите лишний отступ сверху */
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    text-align: left;
+    margin-top: 30px;
+}
+.content-image {
+    flex: 0 0 auto;
+}
+.content-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px; /* Отступ слева */
+}
+
+.text h3 {
+    font-size: 30px;
+    margin: 10px 0;
+    color: #000000;
+    margin-bottom: 35px;
+}
+
+
+.text p {
+    font-size: 25px;
+    color: #555;
+}
+
+.text a {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-top: 30px;
+    color: #1B54DD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button-main {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: fit-content; /* Устанавливаем ширину по содержимому */
+    margin: 20px auto; /* Центрируем кнопку */
+}
+
+.cta-button-header {
+    background-color: #fff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: fit-content; /* Устанавливаем ширину по содержимому */
+    margin: 20px auto; /* Центрируем кнопку */
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    background-color: #ccc; /* Серый фон */
+    color: #000; /* Черный текст */
+    padding: 10px 0;
+}
+.social-icons img {
+    width: 24px;
+    margin: 0 10px;
+}
+@media (max-width: 600px) {
+    .header {
+        grid-template-columns: 1fr; 
+        grid-gap: 20px; 
+    .header-title, h2, .header-p {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+    .header-image img {
+        max-width: 100%; 
+        height: auto;
+    }
+
+    .main {
+        grid-template-columns: 1fr; 
+
+    .item {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .content-image, .text {
+        width: 100%; 
+    .text {
+        padding-left: 0; 
+        text-align: center; 
+    }
+    .text h3, .text p, .text a {
+        margin: 10px 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+    .header-title {
+        font-size: 24px;
+    }
+    .header-p {
+        font-size: 18px;
+    }
+    .text h3 {
+        font-size: 20px;
+    }
+    .text p {
+        font-size: 16px;
+    }
+
+    .cta-button-header, .cta-button-main {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+    .social-icons {
+        display: flex;
+        flex-direction: column; /* Stack social icons vertically */
+        align-items: center; 
+    }
+    .social-icons img {
+        margin: 5px 0;
+    }
+}
