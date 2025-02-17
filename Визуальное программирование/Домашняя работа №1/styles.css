@@ -71,8 +71,8 @@ body {
     grid-template-rows: auto 1fr;
     justify-items: center;
     width: 100%;
-    height: auto; /* Измените это значение на auto */
-    padding-top: 50px; /* Уменьшите отступ сверху */
+    height: auto; 
+    padding-top: 50px; 
     margin: 20px auto;
 }
 
@@ -80,10 +80,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Отступы между блоками */
+    gap: 20px; 
     width: 90%;
     max-width: 1000px;
-    margin-top: 0; /* Уберите лишний отступ сверху */
+    margin-top: 0; 
 }
 
 .item {
@@ -110,7 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 15px; /* Отступ слева */
+    padding-left: 15px;
 }
 
 .text h3 {
@@ -141,8 +141,8 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    width: fit-content; /* Устанавливаем ширину по содержимому */
-    margin: 20px auto; /* Центрируем кнопку */
+    width: fit-content;
+    margin: 20px auto;
 }
 
 .cta-button-header {
@@ -151,8 +151,8 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    width: fit-content; /* Устанавливаем ширину по содержимому */
-    margin: 20px auto; /* Центрируем кнопку */
+    width: fit-content; 
+    margin: 20px auto; 
 }
 .footer {
     background-color: #f8f9fa;
@@ -161,8 +161,8 @@ body {
 }
 
 .social-icons {
-    background-color: #ccc; /* Серый фон */
-    color: #000; /* Черный текст */
+    background-color: #ccc; 
+    color: #000; 
     padding: 10px 0;
 }
 .social-icons img {
@@ -173,37 +173,40 @@ body {
     .header {
         grid-template-columns: 1fr; 
         grid-gap: 20px; 
+    }
     .header-title, h2, .header-p {
         width: 100%; 
         margin-bottom: 10px; 
     }
     .header-image img {
-        max-width: 100%; 
+        max-width: 100%;/
         height: auto;
     }
 
     .main {
         grid-template-columns: 1fr; 
+    }
 
     .item {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
     }
     .content-image, .text {
-        width: 100%; 
+        width: 100%;
+    }
     .text {
-        padding-left: 0; 
-        text-align: center; 
+        padding-left: 0;
+        text-align: center;
     }
     .text h3, .text p, .text a {
-        margin: 10px 0;
+        margin: 10px 0; 
     }
 
     body {
         font-size: 14px;
     }
     .header-title {
-        font-size: 24px;
+        font-size: 24px; 
     }
     .header-p {
         font-size: 18px;
@@ -221,12 +224,12 @@ body {
     }
 
     .footer {
-        padding: 10px;
+        padding: 10px; 
     }
     .social-icons {
         display: flex;
-        flex-direction: column; /* Stack social icons vertically */
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
     }
     .social-icons img {
         margin: 5px 0;
