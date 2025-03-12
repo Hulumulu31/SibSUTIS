@@ -1,0 +1,23 @@
+def seidel_method(A, b, tol=1e-6, max_iter=100):
+    n = len(b)
+    x = [0] * n  # Начальное приближение
+
+    print("Метод Зейделя:")
+    for k in range(max_iter):
+        x_old = x.copy()
+        for i in range(n):
+            sigma = sum(A[i][j] * x[j] for j in range(i)) + \
+                    sum(A[i][j] * x_old[j] for j in range(i + 1, n))
+            x[i] = (b[i] - sigma) / A[i][i]
+        print(f"Итерация {k + 1}: x = {[f'{xi:.8f}' for xi in x]}")
+        if max(abs(x[i] - x_old[i]) for i in range(n)) < tol:
+            print(f"Сходимость достигнута за {k + 1} итераций.")
+            return [f'{xi:.8f}' for xi in x]
+    print("Метод не сошелся за максимальное число итераций.")
+    return [f'{xi:.8f}' for xi in x]
+
+# Пример использования
+A = [[4, 1, 1], [1, 5, 2], [1, 2, 6]]
+b = [7, 8, 9]
+solution = seidel_method(A, b)
+print("Решение:", solution)

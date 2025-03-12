@@ -1,0 +1,22 @@
+def newton_method(f, df, x0, tol=1e-6, max_iter=100):
+    print("Метод Ньютона:")
+    x = x0
+    for i in range(max_iter):
+        fx = f(x)
+        dfx = df(x)
+        if dfx == 0:
+            raise ValueError("Производная равна нулю. Метод не может продолжаться.")
+        x_new = x - fx / dfx
+        print(f"Итерация {i + 1}: x = {f'{x_new:.8f}'}, f(x) = {f'{fx:.8f}'}")
+        if abs(x_new - x) < tol:
+            print(f"Сходимость достигнута за {i + 1} итераций.")
+            return f'{x_new:.8f}'
+        x = x_new
+    print("Метод не сошелся за максимальное число итераций.")
+    return f'{x:.8f}'
+
+# Пример использования
+f = lambda x: x**3 - 2*x - 5
+df = lambda x: 3*x**2 - 2
+solution = newton_method(f, df, 2)
+print("Решение:", solution)

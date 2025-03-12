@@ -1,0 +1,23 @@
+def simple_iteration_method(A, b, tol=1e-6, max_iter=100):
+    n = len(b)
+    x = [0] * n  # Начальное приближение
+
+    print("Метод простых итераций:")
+    for i in range(max_iter):
+        x_new = []
+        for j in range(n):
+            sigma = sum(A[j][k] * x[k] for k in range(n) if k != j)
+            x_new.append((b[j] - sigma) / A[j][j])
+        print(f"Итерация {i + 1}: x = {[f'{xi:.8f}' for xi in x_new]}")
+        if max(abs(x_new[i] - x[i]) for i in range(n)) < tol:
+            print(f"Сходимость достигнута за {i + 1} итераций.")
+            return [f'{xi:.8f}' for xi in x_new]
+        x = x_new
+    print("Метод не сошелся за максимальное число итераций.")
+    return [f'{xi:.8f}' for xi in x]
+
+# Пример использования
+A = [[4, 1, 1], [1, 5, 2], [1, 2, 6]]
+b = [7, 8, 9]
+solution = simple_iteration_method(A, b)
+print("Решение:", solution)

@@ -1,0 +1,62 @@
+def gauss_elimination_with_pivoting(A, b):
+    n = len(b)
+    
+    # Преобразуем A и b в расширенную матрицу
+    augmented_matrix = [A[i] + [b[i]] for i in range(n)]
+    
+    print("Исходная расширенная матрица:")
+    for row in augmented_matrix:
+        print([f'{elem:.8f}' for elem in row])
+    print("\n--- Прямой ход ---")
+    
+    # Прямой ход: приведение к треугольному виду
+    for i in range(n):
+        # Выбор ведущего элемента (поиск максимального элемента в текущем столбце)
+        max_row = i
+        for k in range(i + 1, n):
+            if abs(augmented_matrix[k][i]) > abs(augmented_matrix[max_row][i]):
+                max_row = k
+        
+        # Меняем строки местами, если ведущий элемент не на диагонали
+        if max_row != i:
+            augmented_matrix[i], augmented_matrix[max_row] = augmented_matrix[max_row], augmented_matrix[i]
+            print(f"Меняем строки {i + 1} и {max_row + 1}:")
+            for row in augmented_matrix:
+                print([f'{elem:.8f}' for elem in row])
+        
+        # Обнуляем элементы под диагональю в текущем столбце
+        for k in range(i + 1, n):
+            factor = augmented_matrix[k][i] / augmented_matrix[i][i]
+            for j in range(i, n + 1):  # n + 1, так как работаем с расширенной матрицей
+                augmented_matrix[k][j] -= factor * augmented_matrix[i][j]
+            print(f"Вычитаем строку {i + 1}, умноженную на {f'{factor:.8f}'}, из строки {k + 1}:")
+            for row in augmented_matrix:
+                print([f'{elem:.8f}' for elem in row])
+    
+    print("\n--- Треугольная матрица после прямого хода ---")
+    for row in augmented_matrix:
+        print([f'{elem:.8f}' for elem in row])
+    
+    # Обратный ход: нахождение решений
+    print("\n--- Обратный ход ---")
+    x = [0] * n
+    for i in range(n - 1, -1, -1):
+        x[i] = augmented_matrix[i][-1] / augmented_matrix[i][i]
+        print(f"x[{i + 1}] = {f'{augmented_matrix[i][-1]:.8f}'} / {f'{augmented_matrix[i][i]:.8f}'} = {f'{x[i]:.8f}'}")
+        for k in range(i - 1, -1, -1):
+            augmented_matrix[k][-1] -= augmented_matrix[k][i] * x[i]
+            print(f"Обновляем правую часть строки {k + 1}: b[{k + 1}] = {f'{augmented_matrix[k][-1]:.8f}'}")
+    
+    print("\nРешение системы:")
+    return [f'{xi:.8f}' for xi in x]
+
+# Пример использования
+A = [
+    [2, 1, -1],
+    [-3, -1, 2],
+    [-2, 1, 2]
+]
+b = [8, -11, -3]
+
+solution = gauss_elimination_with_pivoting(A, b)
+print("Вектор решений:", solution)
