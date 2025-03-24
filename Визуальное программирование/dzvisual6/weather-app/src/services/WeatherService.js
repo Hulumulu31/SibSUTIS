@@ -1,4 +1,4 @@
-const API_KEY = '677dd608e9f7d08febda7ab92ce75972';
+const API_KEY = 'a0b51d74cdc20a264aebbdd31f06af99';
 
 async function getCoordinates(cityName) {
     const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`; //Cоздается URL для запроса
