@@ -1,0 +1,43 @@
+.app {
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #e3f2f9;  /* Легкий голубой фон */
+    transition: background-color 0.5s ease;
+    color: #333;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.clear-bg {
+    background: linear-gradient(to top, #5c9eaf, #4c7b8b); /* Мягкий голубой градиент */
+}
+
+.cloudy-bg {
+    background: linear-gradient(to top, #b7c8d5, #62707d); /* Облачно с теплым оттенком */
+}
+
+.rainy-bg {
+    background: linear-gradient(to top, #5d6873, #1f2c35); /* Дождь, темный фон */
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: #1c2a36;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.city-name {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1c2a36;
+}
+
+.error {
+    color: #e53935; /* Яркий красный */
+    font-weight: bold;
+    margin-top: 15px;
+}

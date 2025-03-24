@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Шрифт, подходящий для современных приложений */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f8ff; /* Легкий голубой оттенок */
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}

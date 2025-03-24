@@ -1,0 +1,27 @@
+.city-selector {
+  margin-bottom: 30px;
+}
+
+.city-selector input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #4b6570;
+  margin-right: 15px;
+  font-size: 1.1rem;
+  width: 250px;
+}
+
+.city-selector button {
+  padding: 12px 20px;
+  border: 2px solid #3c6e8f;
+  border-radius: 8px;
+  background-color: #3c6e8f;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.city-selector button:hover {
+  background-color: #2f5779;
+}
