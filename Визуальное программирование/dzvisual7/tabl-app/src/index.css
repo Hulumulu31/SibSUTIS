@@ -1,0 +1,48 @@
+/* Общие стили для таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+/* Добавление теней для ячеек */
+td, th {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Выделение строки при наведении */
+tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Цвет выделения строки */
+tr.selected {
+  background-color: #cce5ff;
+}
+
+/* Цвет выделения ячеек */
+td.selected {
+  background-color: #b3d9ff;
+}
+
+/* Для ячеек, на которые нажали */
+td.selected {
+  background-color: #007bff;
+  color: white;
+}
