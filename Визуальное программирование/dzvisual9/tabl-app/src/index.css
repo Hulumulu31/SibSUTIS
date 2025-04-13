@@ -1,0 +1,162 @@
+/* Общие стили для страницы */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50; /* Тёмно-синий фон */
+  color: #ffffff;           /* Белый текст */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Контейнер для всего контента */
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Внешний контейнер для форм, таблиц, и т.д. */
+.main-container {
+  margin-top: 20px;
+  background-color: transparent; /* Можно оставить прозрачным, чтобы был виден фон */
+}
+
+/* Стили для формы и её полей */
+form, 
+.form-container {
+  background-color: transparent; /* Нет отдельного блока, фон общий тёмный */
+  margin-bottom: 24px;
+  border: none; /* Убираем рамку */
+  padding: 0;   /* Убираем отступы */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Поля ввода — белая заливка, тёмный текст */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #333;           /* Тёмный текст */
+  background-color: #fff;/* Светлый фон */
+  font-size: 16px;
+  outline: none;
+}
+
+/* Добавим небольшое затемнение при фокусе */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #888;
+}
+
+/* Кнопки (Добавить / Удалить) в контрастном стиле */
+button {
+  background-color: #f39c12; /* Оранжевый/Жёлтый оттенок */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #d9870f; /* Немного темнее при ховере */
+}
+
+/* Таблица в тёмном стиле */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #2c3e50; /* Общий фон таблицы совпадает с фоном страницы */
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #3b4a5a; /* Тонкие разделительные линии */
+  color: #ffffff; /* Белый текст */
+}
+
+/* Шапка таблицы чуть темнее */
+th {
+  background-color: #253648; 
+  font-weight: 600;
+}
+
+/* При наведении строка становится чуть светлее */
+tr:hover {
+  background-color: #3b4a5a;
+}
+
+/* Дополнительные стили для кнопок внутри таблицы */
+table button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #3498db;
+}
+
+table button:hover {
+  background-color: #2980b9;
+}
+
+/* Сайдбар (левая колонка) */
+nav {
+  background-color: #262f3b; /* Более контрастный тёмно-серый/синий фон */
+  min-width: 220px;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Список ссылок внутри сайдбара */
+nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* Отступы между элементами списка */
+nav li {
+  margin-bottom: 16px;
+}
+
+/* Ссылки в сайдбаре */
+nav a {
+  color: #ffffff;            /* Белый цвет текста */
+  text-decoration: none;     /* Без подчеркивания */
+  font-weight: 500;          /* Средняя жирность */
+  font-size: 16px;
+  display: block;            /* Чтобы вся строка была кликабельна */
+  padding: 8px 0;            /* Внутренние отступы сверху/снизу */
+  transition: color 0.2s ease;
+}
+
+/* Смена цвета при наведении мышью */
+nav a:hover {
+  color: #f39c12;            /* Оранжево-жёлтый при наведении */
+}
+
+/* Активная ссылка */
+nav a.active-link {
+  color: #f39c12;            /* Можно сделать такой же оранжевый */
+  text-decoration: underline;
+}
