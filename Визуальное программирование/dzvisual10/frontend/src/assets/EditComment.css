@@ -1,0 +1,52 @@
+.edit-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #ffc107; 
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.edit-button:hover {
+    background-color: #e0a800; 
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-actions button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-actions button:first-child {
+    background-color: green;
+    color: white;
+}
+
+.form-actions button:last-child {
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,25 @@
+.dataset-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataset-table th, .dataset-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.dataset-table .empty-column {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid #303030;
+  width: 30px;
+  padding: 0;
+}
+
+.dataset-table tr {
+  cursor: pointer;
+}
+
+.dataset-table .selected-row {
+  background-color: lightblue;
+}
