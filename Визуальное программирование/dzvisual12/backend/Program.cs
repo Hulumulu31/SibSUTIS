@@ -2,10 +2,10 @@ using TableApp.Repositories;  // Для ApplicationDbContext
 using TableApp.Services;      // Для CommentService и DatabaseLogger
 using Microsoft.EntityFrameworkCore;  // Для UseNpgsql
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Добавление CORS
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -16,11 +16,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Регистрация контекста базы данных с PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql("Host=localhost;Database=commentsdb;Username=postgres;Password=1"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Регистрация сервисов
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<CommentService>();
 builder.Services.AddSingleton<ILogger>(provider =>
@@ -35,7 +33,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Использование middleware для логирования всех запросов
 app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseSwagger();
